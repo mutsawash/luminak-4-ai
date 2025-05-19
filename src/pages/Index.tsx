@@ -1,13 +1,45 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { Helmet } from 'react-helmet';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import Hero from '@/components/sections/Hero';
+import Services from '@/components/sections/Services';
+import About from '@/components/sections/About';
+import CaseStudies from '@/components/sections/CaseStudies';
+import Blog from '@/components/sections/Blog';
+import Contact from '@/components/sections/Contact';
+import { useEffect } from 'react';
 
 const Index = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>AutomateAI - Intelligent Business Automation Solutions</title>
+        <meta 
+          name="description" 
+          content="Transform your business with our cutting-edge AI automation solutions. Streamline operations, enhance efficiency, and drive growth."
+        />
+      </Helmet>
+      
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        
+        <main className="flex-grow">
+          <Hero />
+          <Services />
+          <About />
+          <CaseStudies />
+          <Blog />
+          <Contact />
+        </main>
+        
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 

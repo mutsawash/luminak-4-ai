@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,47 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// AI automation company brand colors
+				brand: {
+					'50': '#f0f5ff',
+					'100': '#e0ebff',
+					'200': '#c7d7fe',
+					'300': '#a4bcfc',
+					'400': '#8197f8',
+					'500': '#6366f1',
+					'600': '#4f46e5',
+					'700': '#4338ca',
+					'800': '#3730a3',
+					'900': '#312e81',
+					'950': '#1e1b4b',
+				},
+				accent1: {
+					'50': '#f5f3ff',
+					'100': '#ede9fe',
+					'200': '#ddd6fe',
+					'300': '#c4b5fd',
+					'400': '#a78bfa',
+					'500': '#8b5cf6',
+					'600': '#7c3aed',
+					'700': '#6d28d9',
+					'800': '#5b21b6',
+					'900': '#4c1d95',
+					'950': '#2e1065',
+				},
+				accent2: {
+					'50': '#ecfdf5',
+					'100': '#d1fae5',
+					'200': '#a7f3d0',
+					'300': '#6ee7b7',
+					'400': '#34d399',
+					'500': '#10b981',
+					'600': '#059669',
+					'700': '#047857',
+					'800': '#065f46',
+					'900': '#064e3b',
+					'950': '#022c22',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +125,36 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-out': {
+					'0%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					},
+					'100%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'fade-out': 'fade-out 0.6s ease-out'
+			},
+			fontFamily: {
+				sans: ['Inter', 'sans-serif']
 			}
 		}
 	},
