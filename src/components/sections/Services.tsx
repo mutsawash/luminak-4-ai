@@ -1,6 +1,5 @@
-
 import ServiceCard from '@/components/ui/ServiceCard';
-import { Robot, BarChart3, MessageSquare, Database, Code, ShieldCheck } from 'lucide-react';
+import { Bot, BarChart3, MessageSquare, Database, Code, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface ServicesProps {
@@ -12,7 +11,7 @@ const Services = ({ className = '' }: ServicesProps) => {
     {
       title: 'Process Automation',
       description: 'Streamline workflows, eliminate repetitive tasks, and optimize business processes with intelligent automation solutions.',
-      icon: <Robot className="w-6 h-6" />,
+      icon: <Bot className="w-6 h-6" />,
     },
     {
       title: 'Predictive Analytics',
