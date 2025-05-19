@@ -10,11 +10,11 @@ const About = ({ className = '' }: AboutProps) => {
   const values = [
     {
       title: 'Innovation',
-      description: 'We constantly push the boundaries of what's possible with AI technology.',
+      description: "We constantly push the boundaries of what's possible with AI technology.",
     },
     {
       title: 'Excellence',
-      description: 'We're committed to delivering high-quality solutions that exceed expectations.',
+      description: "We're committed to delivering high-quality solutions that exceed expectations.",
     },
     {
       title: 'Collaboration',
