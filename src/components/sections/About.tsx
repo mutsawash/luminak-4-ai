@@ -38,13 +38,13 @@ const About = ({ className = '' }: AboutProps) => {
           >
             <h2 className="section-title">About Luminak 4 AI</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Founded in 2019, Luminak 4 AI has been at the forefront of the artificial intelligence revolution, 
+              Founded in November 2024 by Mutsa Malcom, Luminak 4 AI has been at the forefront of the artificial intelligence revolution, 
               helping businesses of all sizes leverage AI to transform their operations and achieve 
               unprecedented levels of efficiency and growth.
             </p>
             <p className="text-lg text-muted-foreground mb-6">
-              Our team of AI experts, data scientists, and developers are passionate about creating 
-              intelligent solutions that solve real-world business problems. With expertise across 
+              Under the leadership of CEO and co-founder Nyasha Chinyere, our team of AI experts, data scientists, and developers 
+              are passionate about creating intelligent solutions that solve real-world business problems. With expertise across 
               multiple industries and technologies, we deliver customized AI implementation strategies 
               that align with your business goals.
             </p>
