@@ -1,3 +1,4 @@
+
 import ServiceCard from '@/components/ui/ServiceCard';
 import { Bot, BarChart3, MessageSquare, Database, Code, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -41,7 +42,7 @@ const Services = ({ className = '' }: ServicesProps) => {
   ];
 
   return (
-    <section className={`py-24 ${className}`}>
+    <section className={`py-24 bg-slate-900 ${className}`}>
       <div className="container max-w-7xl mx-auto px-4">
         <motion.div 
           className="text-center mb-16"
@@ -50,8 +51,8 @@ const Services = ({ className = '' }: ServicesProps) => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="section-title">Our AI Automation Services</h2>
-          <p className="section-subtitle">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-white">Our AI Automation Services</h2>
+          <p className="text-lg text-gray-300 mb-12 max-w-3xl mx-auto">
             We provide end-to-end AI solutions that help businesses streamline operations, boost efficiency, and drive innovation.
           </p>
         </motion.div>
@@ -69,6 +70,7 @@ const Services = ({ className = '' }: ServicesProps) => {
                 title={service.title}
                 description={service.description}
                 icon={service.icon}
+                className="bg-slate-800 border-yellow-500/20 hover:border-yellow-500/50"
               />
             </motion.div>
           ))}
