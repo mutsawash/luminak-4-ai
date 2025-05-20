@@ -41,10 +41,10 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>About Us - AutomateAI</title>
+        <title>About Us - Luminak 4 AI</title>
         <meta 
           name="description" 
-          content="Learn about AutomateAI, our mission, values, and the expert team behind our AI automation solutions."
+          content="Learn about Luminak 4 AI, our mission, values, and the expert team behind our AI automation solutions."
         />
       </Helmet>
       
@@ -56,7 +56,7 @@ const AboutPage = () => {
             <div className="container max-w-7xl mx-auto px-4">
               <div className="text-center mb-16">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  About <span className="gradient-text">AutomateAI</span>
+                  About <span className="gradient-text">Luminak 4 AI</span>
                 </h1>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                   We're on a mission to transform businesses through intelligent automation and 

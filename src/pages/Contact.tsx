@@ -37,7 +37,7 @@ const ContactPage = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us - AutomateAI</title>
+        <title>Contact Us - Luminak 4 AI</title>
         <meta 
           name="description" 
           content="Get in touch with our AI automation experts to discuss how we can help transform your business operations."

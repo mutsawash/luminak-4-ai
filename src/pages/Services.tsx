@@ -14,7 +14,7 @@ const ServicesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Services - AutomateAI</title>
+        <title>Services - Luminak 4 AI</title>
         <meta 
           name="description" 
           content="Explore our range of AI automation services designed to streamline your business operations and drive efficiency."

@@ -10,11 +10,11 @@ const About = ({ className = '' }: AboutProps) => {
   const values = [
     {
       title: 'Innovation',
-      description: "We constantly push the boundaries of what's possible with AI technology.",
+      description: "We constantly push the boundaries of what is possible with AI technology.",
     },
     {
       title: 'Excellence',
-      description: "We're committed to delivering high-quality solutions that exceed expectations.",
+      description: "We are committed to delivering high-quality solutions that exceed expectations.",
     },
     {
       title: 'Collaboration',
@@ -36,9 +36,9 @@ const About = ({ className = '' }: AboutProps) => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="section-title">About AutomateAI</h2>
+            <h2 className="section-title">About Luminak 4 AI</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Founded in 2019, AutomateAI has been at the forefront of the artificial intelligence revolution, 
+              Founded in 2019, Luminak 4 AI has been at the forefront of the artificial intelligence revolution, 
               helping businesses of all sizes leverage AI to transform their operations and achieve 
               unprecedented levels of efficiency and growth.
             </p>

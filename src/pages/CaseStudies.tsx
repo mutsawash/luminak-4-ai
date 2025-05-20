@@ -83,7 +83,7 @@ const CaseStudiesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Case Studies - AutomateAI</title>
+        <title>Case Studies - Luminak 4 AI</title>
         <meta 
           name="description" 
           content="Explore real-world examples of how our AI automation solutions have transformed businesses across various industries."
