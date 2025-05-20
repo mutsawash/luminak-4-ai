@@ -29,6 +29,12 @@ const About = ({ className = '' }: AboutProps) => {
   return (
     <section className={`py-24 bg-secondary/50 ${className}`}>
       <div className="container max-w-7xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-2xl md:text-3xl font-semibold italic mb-4">
+            "Our dream is to make your dream come true."
+          </h2>
+        </div>
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -38,12 +44,12 @@ const About = ({ className = '' }: AboutProps) => {
           >
             <h2 className="section-title">About Luminak 4 AI</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Founded in November 2024 by Mutsa Malcom, Luminak 4 AI has been at the forefront of the artificial intelligence revolution, 
+              Founded in November 2024 by Mutsa Malcom and Nyasha Chinyere, Luminak 4 AI has been at the forefront of the artificial intelligence revolution, 
               helping businesses of all sizes leverage AI to transform their operations and achieve 
               unprecedented levels of efficiency and growth.
             </p>
             <p className="text-lg text-muted-foreground mb-6">
-              Under the leadership of CEO and co-founder Nyasha Chinyere, our team of AI experts, data scientists, and developers 
+              Under the leadership of CEO Nyasha Chinyere, our team of AI experts, data scientists, and developers 
               are passionate about creating intelligent solutions that solve real-world business problems. With expertise across 
               multiple industries and technologies, we deliver customized AI implementation strategies 
               that align with your business goals.

@@ -31,6 +31,7 @@ const Contact = ({ className = '' }: ContactProps) => {
     setIsSubmitting(true);
     
     // Simulate form submission
+    // In a real application, you would send this data to luminak4@gmail.com
     setTimeout(() => {
       toast({
         title: "Message sent successfully!",
@@ -135,7 +136,7 @@ const Contact = ({ className = '' }: ContactProps) => {
             <div className="bg-card border border-border rounded-xl overflow-hidden h-full">
               <div className="aspect-w-16 aspect-h-9">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.305935303!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sca!4v1612344026356!5m2!1sen!2sca" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.538290300406!2d31.00178657556241!3d-17.691157983609017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4ed5c0ed8f1%3A0x7adbd1040a8d0c75!2sWestgate%20Shopping%20Centre%2C%20Harare!5e0!3m2!1sen!2szw!4v1716578691320!5m2!1sen!2szw"
                   className="w-full h-64 border-0" 
                   allowFullScreen 
                   loading="lazy"
@@ -148,15 +149,18 @@ const Contact = ({ className = '' }: ContactProps) => {
                 <ul className="space-y-4">
                   <li className="flex items-start space-x-3">
                     <MapPin className="h-5 w-5 text-brand-500 mt-0.5" />
-                    <span>123 AI Boulevard, Tech City, TC 10111</span>
+                    <span>10 Good Hope, Westgate, Harare</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <Phone className="h-5 w-5 text-brand-500" />
-                    <span>+1 (555) 123-4567</span>
+                    <div className="flex flex-col">
+                      <span>Call: +263 788 448 538</span>
+                      <span>WhatsApp: +263 712 521 739</span>
+                    </div>
                   </li>
                   <li className="flex items-center space-x-3">
                     <Mail className="h-5 w-5 text-brand-500" />
-                    <span>info@automateai.com</span>
+                    <span>info@luminak4ai.com</span>
                   </li>
                 </ul>
                 <div className="mt-8">
