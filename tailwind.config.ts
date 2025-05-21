@@ -13,12 +13,41 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: {
+				DEFAULT: '1rem',
+				sm: '2rem',
+				lg: '4rem',
+				xl: '5rem',
+				'2xl': '6rem',
+			},
 			screens: {
-				'2xl': '1400px'
+				sm: '640px',
+				md: '768px',
+				lg: '1024px',
+				xl: '1280px',
+				'2xl': '1536px',
 			}
 		},
 		extend: {
+			screens: {
+				'xs': '360px',
+				'sm': '640px',
+				'md': '768px',
+				'lg': '1024px',
+				'xl': '1280px',
+				'2xl': '1536px',
+				'3xl': '1920px',
+				'tall': { 'raw': '(min-height: 800px)' },
+				'short': { 'raw': '(max-height: 699px)' },
+				'landscape': { 'raw': '(orientation: landscape)' },
+				'portrait': { 'raw': '(orientation: portrait)' },
+			},
+			spacing: {
+				'safe-top': 'env(safe-area-inset-top)',
+				'safe-bottom': 'env(safe-area-inset-bottom)',
+				'safe-left': 'env(safe-area-inset-left)',
+				'safe-right': 'env(safe-area-inset-right)',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -145,17 +174,94 @@ export default {
 						opacity: '0',
 						transform: 'translateY(10px)'
 					}
+				},
+				'pulse-slow': {
+					'0%, 100%': {
+						opacity: 1
+					},
+					'50%': {
+						opacity: 0.5
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'shimmer': {
+					'100%': {
+						transform: 'translateX(100%)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
-				'fade-out': 'fade-out 0.6s ease-out'
+				'fade-out': 'fade-out 0.6s ease-out',
+				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'shimmer': 'shimmer 2s infinite'
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif']
-			}
+				sans: ['Inter', 'system-ui', 'sans-serif']
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: '65ch',
+						color: 'inherit',
+						a: {
+							color: 'inherit',
+							opacity: 0.75,
+							fontWeight: '500',
+							textDecoration: 'underline',
+							'&:hover': {
+								opacity: 1,
+								color: 'var(--primary)'
+							},
+						},
+						h1: {
+							color: 'inherit',
+							fontWeight: '700',
+						},
+						h2: {
+							color: 'inherit',
+							fontWeight: '600',
+						},
+						h3: {
+							color: 'inherit',
+							fontWeight: '600',
+						},
+						h4: {
+							color: 'inherit',
+							fontWeight: '600',
+						},
+						code: {
+							color: 'var(--primary)',
+							backgroundColor: 'var(--muted)',
+							paddingLeft: '5px',
+							paddingRight: '5px',
+							paddingTop: '2px',
+							paddingBottom: '2px',
+							borderRadius: '4px',
+						},
+						'code::before': {
+							content: 'none',
+						},
+						'code::after': {
+							content: 'none',
+						},
+						blockquote: {
+							borderLeftColor: 'var(--secondary)',
+							opacity: 0.8,
+						},
+					},
+				},
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
