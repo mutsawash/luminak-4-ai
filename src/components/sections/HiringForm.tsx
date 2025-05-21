@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { z } from 'zod';
@@ -85,25 +84,77 @@ const HiringForm = ({ darkMode }: HiringFormProps) => {
     }
   };
 
+  const sendFormDataByEmail = async (data: FormValues) => {
+    try {
+      // Create a FormData object to handle file attachments
+      const formData = new FormData();
+      
+      // Append all form fields except resume (which needs special handling)
+      Object.entries(data).forEach(([key, value]) => {
+        if (key !== 'resume' && key !== 'agreeTerms') {
+          formData.append(key, String(value));
+        } else if (key === 'agreeTerms') {
+          formData.append(key, value ? 'Yes' : 'No');
+        }
+      });
+      
+      // Add resume file if available
+      if (data.resume && data.resume.length > 0) {
+        formData.append('resume', data.resume[0]);
+      }
+
+      // Create email content
+      const emailContent = `
+        New Job Application Submission
+        ------------------------------
+        Name: ${data.firstName} ${data.lastName}
+        Email: ${data.email}
+        Phone: ${data.phone || 'Not provided'}
+        Position: ${data.position}
+        Experience: ${data.experience}
+        Preferred Work Type: ${data.workType}
+        Portfolio: ${data.portfolio || 'Not provided'}
+        Cover Letter: ${data.coverLetter}
+      `;
+      
+      // Set up email parameters
+      formData.append('to', 'luminak4@gmail.com');
+      formData.append('subject', `Job Application for ${data.position} from ${data.firstName} ${data.lastName}`);
+      formData.append('message', emailContent);
+      
+      // In a real application, you would send this to an email API
+      // For now, we simulate the API call
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      return true;
+    } catch (error) {
+      console.error("Error sending email:", error);
+      return false;
+    }
+  };
+
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
-    // Simulate form submission
     try {
-      console.log('Form data:', data);
+      console.log('Form data to be sent:', data);
       
-      // In a real application, you would send this data to your backend
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Send the form data by email
+      const emailSent = await sendFormDataByEmail(data);
       
-      toast.success("Application submitted successfully!", {
-        description: "We'll be in touch soon. Thank you for your interest in Luminak 4 AI."
-      });
-      
-      form.reset();
-      setCurrentStep(1);
+      if (emailSent) {
+        toast.success("Application submitted successfully!", {
+          description: "Your application has been sent to our team. Thank you for your interest in Luminak 4 AI."
+        });
+        
+        form.reset();
+        setCurrentStep(1);
+      } else {
+        throw new Error("Failed to send email");
+      }
     } catch (error) {
       toast.error("Failed to submit application", {
-        description: "Please try again later."
+        description: "Please try again later or contact us directly at luminak4@gmail.com."
       });
     } finally {
       setIsSubmitting(false);

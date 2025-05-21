@@ -12,6 +12,7 @@ import BlogPage from "./pages/Blog";
 import ContactPage from "./pages/Contact";
 import HiringPage from "./pages/Hiring";
 import NotFound from "./pages/NotFound";
+import VoiceNavigation from "./components/features/VoiceNavigation";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/careers" element={<HiringPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <VoiceNavigation />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
