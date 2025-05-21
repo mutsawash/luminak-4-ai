@@ -8,6 +8,7 @@ import About from '@/components/sections/About';
 import CaseStudies from '@/components/sections/CaseStudies';
 import Blog from '@/components/sections/Blog';
 import Contact from '@/components/sections/Contact';
+import HiringNotification from '@/components/sections/HiringNotification';
 import { useEffect } from 'react';
 
 const Index = () => {
@@ -18,7 +19,7 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Luminak 4 AI - Advancial Intelligence Solutions</title>
+        <title>Luminak 4 AI - Advanced Intelligence Solutions</title>
         <meta 
           name="description" 
           content="Transform your business with our cutting-edge AI automation solutions. Streamline operations, enhance efficiency, and drive growth."
@@ -46,6 +47,7 @@ const Index = () => {
         </main>
         
         <Footer />
+        <HiringNotification />
       </div>
     </>
   );

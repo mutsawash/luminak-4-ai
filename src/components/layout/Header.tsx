@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -48,6 +47,7 @@ const Header = () => {
             <Link to="/case-studies" className="font-medium text-white hover:text-yellow-400 transition">Case Studies</Link>
             <Link to="/blog" className="font-medium text-white hover:text-yellow-400 transition">Blog</Link>
             <Link to="/contact" className="font-medium text-white hover:text-yellow-400 transition">Contact</Link>
+            <Link to="/careers" className="font-medium text-white hover:text-yellow-400 transition">Careers</Link>
           </nav>
 
           <div className="hidden md:block">
@@ -75,6 +75,7 @@ const Header = () => {
             <Link to="/case-studies" className="font-medium text-white hover:text-yellow-400 transition p-2" onClick={toggleMenu}>Case Studies</Link>
             <Link to="/blog" className="font-medium text-white hover:text-yellow-400 transition p-2" onClick={toggleMenu}>Blog</Link>
             <Link to="/contact" className="font-medium text-white hover:text-yellow-400 transition p-2" onClick={toggleMenu}>Contact</Link>
+            <Link to="/careers" className="font-medium text-white hover:text-yellow-400 transition p-2" onClick={toggleMenu}>Careers</Link>
             <Button className="mt-4 bg-yellow-500 hover:bg-yellow-600 text-slate-900">Get Started</Button>
           </div>
         </div>
