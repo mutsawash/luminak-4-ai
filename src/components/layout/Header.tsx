@@ -65,9 +65,11 @@ const Header = () => {
       <div className="container mx-auto py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2" aria-label="Luminak 4 AI Homepage">
-            <span className="relative flex h-9 w-9 overflow-hidden rounded-lg bg-gradient-to-br from-blue-500 to-yellow-400">
-              <span className="absolute inset-0 flex items-center justify-center text-white font-bold text-xl">4</span>
-            </span>
+            <img 
+              src="/lovable-uploads/5e18e4ae-48d3-4910-b481-84a69da06612.png" 
+              alt="Luminak 4 AI Logo" 
+              className="h-9 w-auto"
+            />
             <span className="font-bold text-xl text-white">
               <span className="text-yellow-400">LUMINAK</span> 4 AI
             </span>
@@ -115,9 +117,11 @@ const Header = () => {
         <div className="flex flex-col h-full">
           <div className="flex justify-between items-center p-4">
             <Link to="/" className="flex items-center space-x-2" onClick={() => setIsMenuOpen(false)}>
-              <span className="relative flex h-9 w-9 overflow-hidden rounded-lg bg-gradient-to-br from-blue-500 to-yellow-400">
-                <span className="absolute inset-0 flex items-center justify-center text-white font-bold text-xl">4</span>
-              </span>
+              <img 
+                src="/lovable-uploads/5e18e4ae-48d3-4910-b481-84a69da06612.png" 
+                alt="Luminak 4 AI Logo" 
+                className="h-9 w-auto"
+              />
               <span className="font-bold text-xl text-white">
                 <span className="text-yellow-400">LUMINAK</span> 4 AI
               </span>

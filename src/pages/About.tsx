@@ -19,6 +19,7 @@ const AboutPage = () => {
           name="description" 
           content="Learn about Luminak 4 AI, our mission, values, and the expert team behind our AI automation solutions."
         />
+        <meta property="og:image" content="/lovable-uploads/5e18e4ae-48d3-4910-b481-84a69da06612.png" />
       </Helmet>
       
       <div className="flex flex-col min-h-screen">
