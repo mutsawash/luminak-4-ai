@@ -102,7 +102,7 @@ const About = ({ className = '' }: AboutProps) => {
             >
               <div className="mb-6 md:mb-0 md:mr-6 flex-shrink-0">
                 <img 
-                  src="/lovable-uploads/9892b006-06cd-43c5-ab03-0d01c75afb02.png" 
+                  src="/lovable-uploads/b3d41378-c8ee-489a-8e42-49b6dfc86801.png" 
                   alt="Nyasha Chinyere, CEO" 
                   className="w-48 h-48 object-cover rounded-lg shadow-md"
                 />
