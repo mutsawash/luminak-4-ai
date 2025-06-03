@@ -12,32 +12,32 @@ const Services = ({ className = '' }: ServicesProps) => {
     {
       title: 'Process Automation',
       description: 'Streamline workflows, eliminate repetitive tasks, and optimize business processes with intelligent automation solutions.',
-      icon: <Bot className="w-6 h-6" />,
+      icon: Bot,
     },
     {
       title: 'Predictive Analytics',
       description: 'Leverage AI-powered analytics to forecast trends, identify opportunities, and make data-driven decisions.',
-      icon: <BarChart3 className="w-6 h-6" />,
+      icon: BarChart3,
     },
     {
       title: 'Chatbot Integration',
       description: 'Enhance customer experience with intelligent chatbots that provide instant support and personalized interactions.',
-      icon: <MessageSquare className="w-6 h-6" />,
+      icon: MessageSquare,
     },
     {
       title: 'Data Management',
       description: 'Organize, analyze, and extract insights from your data with our comprehensive data management solutions.',
-      icon: <Database className="w-6 h-6" />,
+      icon: Database,
     },
     {
       title: 'Custom AI Development',
       description: 'Tailor-made AI solutions designed to address your specific business challenges and requirements.',
-      icon: <Code className="w-6 h-6" />,
+      icon: Code,
     },
     {
       title: 'AI Security & Compliance',
       description: 'Implement AI solutions with robust security measures that adhere to industry standards and regulations.',
-      icon: <ShieldCheck className="w-6 h-6" />,
+      icon: ShieldCheck,
     },
   ];
 
@@ -59,20 +59,14 @@ const Services = ({ className = '' }: ServicesProps) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <motion.div
+            <ServiceCard
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <ServiceCard
-                title={service.title}
-                description={service.description}
-                icon={service.icon}
-                className="bg-slate-800 border-yellow-500/20 hover:border-yellow-500/50"
-              />
-            </motion.div>
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+              index={index}
+              className="bg-slate-800 border-yellow-500/20 hover:border-yellow-500/50"
+            />
           ))}
         </div>
       </div>
