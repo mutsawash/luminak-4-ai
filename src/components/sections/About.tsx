@@ -31,7 +31,7 @@ const About = ({ className = '' }: AboutProps) => {
     <section className={`py-24 bg-secondary/50 ${className}`}>
       <div className="container max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-semibold italic mb-4">
+          <h2 className="text-2xl md:text-3xl font-semibold italic mb-4 text-black">
             "Our dream is to make your dream come true."
           </h2>
         </div>
@@ -44,12 +44,12 @@ const About = ({ className = '' }: AboutProps) => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="section-title">About Luminak 4 AI</h2>
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-lg text-black mb-6">
               Founded in November 2024 by Mutsa Malcom and Nyasha Chinyere, Luminak 4 AI has been at the forefront of the artificial intelligence revolution, 
               helping businesses of all sizes leverage AI to transform their operations and achieve 
               unprecedented levels of efficiency and growth.
             </p>
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-lg text-black mb-6">
               Under the leadership of CEO Nyasha Chinyere, who is currently enrolled in a Mechatronics and Electrical Engineering program at Chinhoyi University, our team of AI experts, data scientists, and developers 
               are passionate about creating intelligent solutions that solve real-world business problems. Our co-founder Mutsa Malcom, an AI specialist, brings extensive expertise across 
               multiple industries and technologies to deliver customized AI implementation strategies 
@@ -76,7 +76,7 @@ const About = ({ className = '' }: AboutProps) => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <h3 className="text-brand-600 text-xl font-semibold mb-3">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
+                  <p className="text-black">{value.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -108,9 +108,9 @@ const About = ({ className = '' }: AboutProps) => {
                 />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Nyasha Chinyere</h3>
+                <h3 className="text-xl font-bold mb-2 text-black">Nyasha Chinyere</h3>
                 <p className="text-brand-600 mb-4">Chief Executive Officer</p>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-black mb-4">
                   Currently enrolled in a Mechatronics and Electrical Engineering program at Chinhoyi University, 
                   Nyasha leads Luminak 4 AI with a vision to transform businesses through innovative AI solutions.
                 </p>
@@ -131,9 +131,9 @@ const About = ({ className = '' }: AboutProps) => {
                 </Avatar>
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Mutsa Malcom</h3>
+                <h3 className="text-xl font-bold mb-2 text-black">Mutsa Malcom</h3>
                 <p className="text-brand-600 mb-4">Co-founder & AI Specialist</p>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-black mb-4">
                   As an AI specialist, Malcom brings deep expertise in artificial intelligence and 
                   machine learning technologies that help our clients achieve groundbreaking results.
                 </p>
