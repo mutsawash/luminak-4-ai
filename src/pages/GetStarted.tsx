@@ -133,8 +133,10 @@ const GetStarted = () => {
     }
   ];
 
+  const selectedIndustryData = industries.find(i => i.id === selectedIndustry);
+
   return (
-    <>
+    <React.Fragment>
       <Helmet>
         <title>Get Started - Luminak 4 AI</title>
         <meta 
@@ -165,32 +167,36 @@ const GetStarted = () => {
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                {industries.map((industry, index) => (
-                  <motion.div
-                    key={industry.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <Card 
-                      className={`cursor-pointer transition-all duration-300 bg-slate-800/50 border-slate-700 hover:border-yellow-500/50 hover:shadow-lg hover:shadow-yellow-500/10 ${
-                        selectedIndustry === industry.id ? 'border-yellow-500 bg-slate-800' : ''
-                      }`}
-                      onClick={() => setSelectedIndustry(industry.id)}
+                {industries.map((industry, index) => {
+                  const IconComponent = industry.icon;
+                  const isSelected = selectedIndustry === industry.id;
+                  const cardClasses = `cursor-pointer transition-all duration-300 bg-slate-800/50 border-slate-700 hover:border-yellow-500/50 hover:shadow-lg hover:shadow-yellow-500/10 ${isSelected ? 'border-yellow-500 bg-slate-800' : ''}`;
+                  
+                  return (
+                    <motion.div
+                      key={industry.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
-                      <CardHeader className="text-center">
-                        <industry.icon className="w-12 h-12 mx-auto mb-4 text-yellow-400" />
-                        <CardTitle className="text-white">{industry.name}</CardTitle>
-                        <CardDescription className="text-gray-400">
-                          {industry.description}
-                        </CardDescription>
-                      </CardHeader>
-                    </Card>
-                  </motion.div>
-                ))}
+                      <Card 
+                        className={cardClasses}
+                        onClick={() => setSelectedIndustry(industry.id)}
+                      >
+                        <CardHeader className="text-center">
+                          <IconComponent className="w-12 h-12 mx-auto mb-4 text-yellow-400" />
+                          <CardTitle className="text-white">{industry.name}</CardTitle>
+                          <CardDescription className="text-gray-400">
+                            {industry.description}
+                          </CardDescription>
+                        </CardHeader>
+                      </Card>
+                    </motion.div>
+                  );
+                })}
               </div>
 
-              {selectedIndustry && (
+              {selectedIndustry && selectedIndustryData && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -200,16 +206,14 @@ const GetStarted = () => {
                   <Card className="bg-slate-800/70 border-yellow-500/30">
                     <CardHeader>
                       <CardTitle className="text-2xl text-white flex items-center gap-3">
-                        {industries.find(i => i.id === selectedIndustry)?.icon && (
-                          <industries.find(i => i.id === selectedIndustry)!.icon className="w-8 h-8 text-yellow-400" />
-                        )}
-                        AI Solutions for {industries.find(i => i.id === selectedIndustry)?.name}
+                        <selectedIndustryData.icon className="w-8 h-8 text-yellow-400" />
+                        AI Solutions for {selectedIndustryData.name}
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <h3 className="text-lg font-semibold text-yellow-400 mb-4">Key Benefits:</h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {industries.find(i => i.id === selectedIndustry)?.benefits.map((benefit, index) => (
+                        {selectedIndustryData.benefits.map((benefit, index) => (
                           <div key={index} className="flex items-start gap-3">
                             <Zap className="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-300">{benefit}</span>
@@ -247,7 +251,7 @@ const GetStarted = () => {
         
         <Footer />
       </div>
-    </>
+    </React.Fragment>
   );
 };
 
