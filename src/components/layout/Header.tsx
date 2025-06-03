@@ -87,9 +87,11 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:block">
-            <Button className="bg-yellow-500 hover:bg-yellow-600 text-slate-900">
-              Get Started
-            </Button>
+            <Link to="/get-started">
+              <Button className="bg-yellow-500 hover:bg-yellow-600 text-slate-900 transform hover:scale-105 transition-all duration-300">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -146,9 +148,11 @@ const Header = () => {
             </nav>
           </div>
           <div className="p-4">
-            <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-slate-900 py-6 text-lg">
-              Get Started
-            </Button>
+            <Link to="/get-started" onClick={() => setIsMenuOpen(false)}>
+              <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-slate-900 py-6 text-lg">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

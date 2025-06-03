@@ -1,43 +1,53 @@
 
-import { ReactNode } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { LucideIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 interface ServiceCardProps {
+  icon: LucideIcon;
   title: string;
   description: string;
-  icon: ReactNode;
-  className?: string;
+  features: string[];
+  index: number;
+  link?: string;
 }
 
-const ServiceCard = ({ title, description, icon, className }: ServiceCardProps) => {
+const ServiceCard = ({ icon: Icon, title, description, features, index, link }: ServiceCardProps) => {
   return (
     <motion.div
-      whileHover={{ y: -5, transition: { duration: 0.2 } }}
-      className={cn('h-full', className)}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <Card className="h-full border border-border/50 bg-card/50 backdrop-blur transition-all hover:border-brand-500/50 hover:shadow-md overflow-hidden group">
-        <CardContent className="p-6 h-full flex flex-col">
-          <div className="w-12 h-12 bg-brand-100 dark:bg-brand-950/50 rounded-lg flex items-center justify-center text-brand-600 mb-5 transition-all group-hover:bg-brand-500 group-hover:text-white">
-            {icon}
-          </div>
-          <h3 className="text-xl font-semibold mb-3">{title}</h3>
-          <p className="text-muted-foreground flex-grow">{description}</p>
-          <div className="mt-4 flex items-center text-brand-600 font-medium">
-            <span>Learn more</span>
-            <svg 
-              className="ml-1 w-5 h-5 transition-transform transform group-hover:translate-x-1" 
-              viewBox="0 0 20 20" 
-              fill="currentColor"
-            >
-              <path 
-                fillRule="evenodd" 
-                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" 
-                clipRule="evenodd" 
-              />
-            </svg>
-          </div>
+      <Card className="h-full bg-card border-border/50 hover:border-brand-500/30 hover:shadow-lg hover:shadow-brand-500/10 transition-all duration-300">
+        <CardHeader>
+          <Icon className="w-12 h-12 text-brand-600 mb-4" />
+          <CardTitle className="text-xl">{title}</CardTitle>
+          <CardDescription>{description}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-2 mb-6">
+            {features.map((feature, featureIndex) => (
+              <li key={featureIndex} className="flex items-start">
+                <span className="w-2 h-2 bg-brand-500 rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                <span className="text-sm text-muted-foreground">{feature}</span>
+              </li>
+            ))}
+          </ul>
+          {link ? (
+            <Link to={link}>
+              <Button variant="outline" className="w-full hover:bg-brand-50">
+                Learn More
+              </Button>
+            </Link>
+          ) : (
+            <Button variant="outline" className="w-full hover:bg-brand-50">
+              Learn More
+            </Button>
+          )}
         </CardContent>
       </Card>
     </motion.div>
