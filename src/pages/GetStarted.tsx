@@ -138,10 +138,10 @@ const GetStarted = () => {
   return (
     <React.Fragment>
       <Helmet>
-        <title>Get Started - Luminak 4 AI</title>
+        <title>Get Started - Luminak 4 AI | Discover AI Solutions for Your Industry</title>
         <meta 
           name="description" 
-          content="Discover how AI can transform your business. Explore industry-specific solutions and get started with intelligent automation."
+          content="Discover how AI can transform your business. Explore industry-specific solutions and get started with intelligent automation from $4,999."
         />
       </Helmet>
       
@@ -149,28 +149,28 @@ const GetStarted = () => {
         <Header />
         
         <main className="flex-grow">
-          <section className="pt-32 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-            <div className="container max-w-7xl mx-auto px-4">
+          <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+            <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div 
-                className="text-center mb-16"
+                className="text-center mb-12 sm:mb-16"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-white">
                   How Can <span className="text-yellow-400">AI Transform</span> Your Business?
                 </h1>
-                <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
                   Select your industry to discover tailored AI solutions that can revolutionize your operations, 
                   increase efficiency, and drive unprecedented growth.
                 </p>
               </motion.div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
                 {industries.map((industry, index) => {
                   const IconComponent = industry.icon;
                   const isSelected = selectedIndustry === industry.id;
-                  const cardClasses = `cursor-pointer transition-all duration-300 bg-slate-800/50 border-slate-700 hover:border-yellow-500/50 hover:shadow-lg hover:shadow-yellow-500/10 ${isSelected ? 'border-yellow-500 bg-slate-800' : ''}`;
+                  const cardClasses = `cursor-pointer transition-all duration-300 bg-slate-800/50 border-slate-700 hover:border-yellow-500/50 hover:shadow-lg hover:shadow-yellow-500/10 ${isSelected ? 'border-yellow-500 bg-slate-800 scale-105' : ''}`;
                   
                   return (
                     <motion.div
@@ -183,10 +183,10 @@ const GetStarted = () => {
                         className={cardClasses}
                         onClick={() => setSelectedIndustry(industry.id)}
                       >
-                        <CardHeader className="text-center">
-                          <IconComponent className="w-12 h-12 mx-auto mb-4 text-yellow-400" />
-                          <CardTitle className="text-white">{industry.name}</CardTitle>
-                          <CardDescription className="text-gray-400">
+                        <CardHeader className="text-center p-4 sm:p-6">
+                          <IconComponent className="w-10 sm:w-12 h-10 sm:h-12 mx-auto mb-3 sm:mb-4 text-yellow-400" />
+                          <CardTitle className="text-white text-base sm:text-lg">{industry.name}</CardTitle>
+                          <CardDescription className="text-gray-400 text-xs sm:text-sm leading-relaxed">
                             {industry.description}
                           </CardDescription>
                         </CardHeader>
@@ -201,22 +201,22 @@ const GetStarted = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="mb-12"
+                  className="mb-8 sm:mb-12"
                 >
                   <Card className="bg-slate-800/70 border-yellow-500/30">
-                    <CardHeader>
-                      <CardTitle className="text-2xl text-white flex items-center gap-3">
-                        <selectedIndustryData.icon className="w-8 h-8 text-yellow-400" />
+                    <CardHeader className="p-4 sm:p-6">
+                      <CardTitle className="text-xl sm:text-2xl text-white flex items-center gap-3">
+                        <selectedIndustryData.icon className="w-6 sm:w-8 h-6 sm:h-8 text-yellow-400" />
                         AI Solutions for {selectedIndustryData.name}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <h3 className="text-lg font-semibold text-yellow-400 mb-4">Key Benefits:</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <CardContent className="p-4 sm:p-6 pt-0">
+                      <h3 className="text-base sm:text-lg font-semibold text-yellow-400 mb-3 sm:mb-4">Key Benefits:</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                         {selectedIndustryData.benefits.map((benefit, index) => (
-                          <div key={index} className="flex items-start gap-3">
-                            <Zap className="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-300">{benefit}</span>
+                          <div key={index} className="flex items-start gap-2 sm:gap-3">
+                            <Zap className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400 mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-300 text-sm sm:text-base">{benefit}</span>
                           </div>
                         ))}
                       </div>
@@ -231,15 +231,15 @@ const GetStarted = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
-                <h2 className="text-2xl font-bold text-white mb-6">Ready to Get Started?</h2>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/pricing">
-                    <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-semibold">
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Ready to Get Started?</h2>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+                  <Link to="/pricing" className="w-full sm:w-auto">
+                    <Button size="lg" className="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-semibold text-sm sm:text-base px-6 sm:px-8">
                       View Plans & Pricing
                     </Button>
                   </Link>
-                  <Link to="/contact-form">
-                    <Button size="lg" variant="outline" className="border-yellow-500 text-yellow-500 hover:bg-yellow-500/10">
+                  <Link to="/contact-form" className="w-full sm:w-auto">
+                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-yellow-500 text-yellow-500 hover:bg-yellow-500/10 text-sm sm:text-base px-6 sm:px-8">
                       Request Consultation
                     </Button>
                   </Link>
