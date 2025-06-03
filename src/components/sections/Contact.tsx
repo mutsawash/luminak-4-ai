@@ -16,6 +16,7 @@ const Contact = ({ className = '' }: ContactProps) => {
     name: '',
     email: '',
     company: '',
+    address: '',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,7 +38,7 @@ const Contact = ({ className = '' }: ContactProps) => {
         title: "Message sent successfully!",
         description: "We'll get back to you as soon as possible.",
       });
-      setFormData({ name: '', email: '', company: '', message: '' });
+      setFormData({ name: '', email: '', company: '', address: '', message: '' });
       setIsSubmitting(false);
     }, 1500);
   };
@@ -108,6 +109,18 @@ const Contact = ({ className = '' }: ContactProps) => {
                 />
               </div>
               <div className="space-y-2">
+                <label htmlFor="address" className="text-sm font-medium">
+                  Physical Address
+                </label>
+                <Input
+                  id="address"
+                  name="address"
+                  placeholder="123 Main Street, City, Country"
+                  value={formData.address}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium">
                   Message
                 </label>
@@ -169,6 +182,12 @@ const Contact = ({ className = '' }: ContactProps) => {
                     Monday - Friday: 9:00 AM - 6:00 PM<br />
                     Saturday: 10:00 AM - 4:00 PM<br />
                     Sunday: Closed
+                  </p>
+                </div>
+                <div className="mt-8 p-4 bg-yellow-50/10 border border-yellow-500/20 rounded-lg">
+                  <h4 className="font-medium mb-2 text-yellow-400">Special Offers</h4>
+                  <p className="text-sm text-gray-300">
+                    We offer <strong>free consulting</strong> sessions and <strong>discounted rates</strong> for companies that donate to charity and can provide evidence of their contributions.
                   </p>
                 </div>
               </div>

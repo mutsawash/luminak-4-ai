@@ -11,7 +11,7 @@ const Hero = ({ className = '' }: HeroProps) => {
   return (
     <section className={`relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden ${className}`} 
       style={{
-        backgroundImage: `url('/lovable-uploads/9892b006-06cd-43c5-ab03-0d01c75afb02.png')`,
+        backgroundImage: `url('/lovable-uploads/19c9299a-9656-496d-b9ea-77844423452a.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
