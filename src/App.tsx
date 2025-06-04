@@ -15,6 +15,8 @@ import GetStarted from "./pages/GetStarted";
 import Pricing from "./pages/Pricing";
 import ContactForm from "./pages/ContactForm";
 import AutomationServices from "./pages/AutomationServices";
+import Consultation from "./pages/Consultation";
+import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,10 +34,11 @@ const App = () => (
           <Route path="/case-studies" element={<CaseStudiesPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/careers" element={<HiringPage />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/get-started" element={<GetStarted />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact-form" element={<ContactForm />} />
+          <Route path="/consultation" element={<Consultation />} />
           <Route path="/automation-services" element={<AutomationServices />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

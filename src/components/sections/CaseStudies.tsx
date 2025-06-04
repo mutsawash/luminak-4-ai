@@ -54,7 +54,7 @@ const CaseStudies = ({ className = '' }: CaseStudiesProps) => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="section-title">Success Stories</h2>
+          <h2 className="section-title">Case Studies</h2>
           <p className="section-subtitle">
             See how our AI solutions have helped businesses across various industries achieve their goals and drive meaningful results.
           </p>
@@ -81,7 +81,13 @@ const CaseStudies = ({ className = '' }: CaseStudiesProps) => {
         </div>
 
         <div className="text-center">
-          <Button>View All Case Studies</Button>
+          <a 
+            href="https://aicasestudies.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button>Read Full Case Study</Button>
+          </a>
         </div>
       </div>
     </section>

@@ -12,7 +12,7 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Starter',
-      price: '$4,999',
+      price: '$1,499',
       period: 'one-time',
       description: 'Perfect for small businesses getting started with AI',
       icon: Zap,
@@ -29,7 +29,7 @@ const Pricing = () => {
     },
     {
       name: 'Professional',
-      price: '$12,999',
+      price: '$2,499',
       period: 'one-time',
       description: 'Comprehensive AI solutions for growing businesses',
       icon: Star,
@@ -48,7 +48,7 @@ const Pricing = () => {
     },
     {
       name: 'Enterprise',
-      price: '$29,999',
+      price: '$2,999',
       period: 'one-time',
       description: 'Full-scale AI transformation for large organizations',
       icon: Crown,
@@ -90,17 +90,17 @@ const Pricing = () => {
   const addOns = [
     {
       name: 'Ongoing Maintenance',
-      price: '$1,499/month',
+      price: '$299/month',
       description: 'Continuous monitoring and optimization of your AI systems'
     },
     {
       name: 'Additional Training',
-      price: '$799/session',
+      price: '$199/session',
       description: 'Extra training sessions for your team members (4-hour sessions)'
     },
     {
       name: 'Priority Support',
-      price: '$499/month',
+      price: '$149/month',
       description: '24/7 priority support with guaranteed 2-hour response times'
     }
   ];
@@ -111,7 +111,7 @@ const Pricing = () => {
         <title>Pricing Plans - Luminak 4 AI | Transparent AI Automation Pricing</title>
         <meta 
           name="description" 
-          content="Choose the perfect AI automation plan for your business. Transparent pricing with no hidden fees. From $4,999 to custom enterprise solutions."
+          content="Choose the perfect AI automation plan for your business. Transparent pricing with no hidden fees. From $1,499 to custom enterprise solutions."
         />
       </Helmet>
       
@@ -134,6 +134,18 @@ const Pricing = () => {
                   Choose the perfect plan for your business. All plans include implementation, 
                   training, and ongoing support to ensure your success.
                 </p>
+                
+                {/* Charity Discount Information */}
+                <div className="mt-6 sm:mt-8 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg backdrop-blur-sm max-w-2xl mx-auto">
+                  <p className="text-sm sm:text-base text-yellow-100 mb-2">
+                    <span className="font-semibold text-yellow-400">🎁 Special Offer:</span> Organizations that donate to charity receive a 
+                    <span className="font-bold text-yellow-400"> free consultation</span> and 
+                    <span className="font-bold text-yellow-400"> 10% discount</span> on all services.
+                  </p>
+                  <p className="text-xs sm:text-sm text-gray-300">
+                    Proof of charitable giving required. Contact us to learn more about this program.
+                  </p>
+                </div>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16">
@@ -175,17 +187,27 @@ const Pricing = () => {
                             </li>
                           ))}
                         </ul>
-                        <Link to="/contact-form" className="block">
-                          <Button 
-                            className={`w-full text-sm sm:text-base py-2 sm:py-3 ${
-                              plan.popular 
-                                ? 'bg-yellow-500 hover:bg-yellow-600 text-slate-900' 
-                                : 'bg-slate-700 hover:bg-slate-600 text-white'
-                            }`}
-                          >
-                            {plan.name === 'Custom' ? 'Contact Sales' : 'Get Started'}
-                          </Button>
-                        </Link>
+                        <div className="space-y-2">
+                          <Link to="/contact-form" className="block">
+                            <Button 
+                              className={`w-full text-sm sm:text-base py-2 sm:py-3 ${
+                                plan.popular 
+                                  ? 'bg-yellow-500 hover:bg-yellow-600 text-slate-900' 
+                                  : 'bg-slate-700 hover:bg-slate-600 text-white'
+                              }`}
+                            >
+                              {plan.name === 'Custom' ? 'Contact Sales' : 'Get Started'}
+                            </Button>
+                          </Link>
+                          <Link to="/consultation" className="block">
+                            <Button 
+                              variant="outline"
+                              className="w-full text-sm sm:text-base py-2 sm:py-3 border-yellow-500/50 text-yellow-400 hover:bg-yellow-500/10"
+                            >
+                              Book Consultation
+                            </Button>
+                          </Link>
+                        </div>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -226,11 +248,18 @@ const Pricing = () => {
                 <p className="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
                   Schedule a free consultation to discuss your specific needs and get a custom quote.
                 </p>
-                <Link to="/contact-form">
-                  <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-semibold text-sm sm:text-base px-6 sm:px-8 py-3">
-                    Schedule Free Consultation
-                  </Button>
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+                  <Link to="/consultation">
+                    <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-semibold text-sm sm:text-base px-6 sm:px-8 py-3">
+                      Schedule Free Consultation
+                    </Button>
+                  </Link>
+                  <Link to="/contact-form">
+                    <Button size="lg" variant="outline" className="border-yellow-500 text-yellow-500 hover:bg-yellow-500/10 text-sm sm:text-base px-6 sm:px-8 py-3">
+                      Contact Sales
+                    </Button>
+                  </Link>
+                </div>
               </motion.div>
             </div>
           </section>

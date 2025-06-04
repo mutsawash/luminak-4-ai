@@ -9,7 +9,6 @@ import About from '@/components/sections/About';
 import CaseStudies from '@/components/sections/CaseStudies';
 import Blog from '@/components/sections/Blog';
 import Contact from '@/components/sections/Contact';
-import HiringNotification from '@/components/sections/HiringNotification';
 import ParticleAnimation from '@/components/ui/ParticleAnimation';
 
 const Index = () => {
@@ -107,7 +106,6 @@ const Index = () => {
         </main>
         
         <Footer />
-        <HiringNotification />
       </div>
     </>
   );

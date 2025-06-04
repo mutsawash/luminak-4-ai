@@ -141,7 +141,7 @@ const GetStarted = () => {
         <title>Get Started - Luminak 4 AI | Discover AI Solutions for Your Industry</title>
         <meta 
           name="description" 
-          content="Discover how AI can transform your business. Explore industry-specific solutions and get started with intelligent automation from $4,999."
+          content="Discover how AI can transform your business. Explore industry-specific solutions and get started with intelligent automation from $1,499."
         />
       </Helmet>
       
@@ -164,6 +164,17 @@ const GetStarted = () => {
                   Select your industry to discover tailored AI solutions that can revolutionize your operations, 
                   increase efficiency, and drive unprecedented growth.
                 </p>
+
+                {/* Vision and Goals Section */}
+                <div className="mt-8 p-6 bg-slate-800/50 border border-yellow-500/30 rounded-lg backdrop-blur-sm max-w-4xl mx-auto">
+                  <h2 className="text-xl sm:text-2xl font-bold text-yellow-400 mb-4">Our Vision & Long-Term Goals</h2>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    At Luminak 4 AI, we envision a future where artificial intelligence seamlessly integrates into every aspect of business operations, 
+                    creating unprecedented opportunities for growth and innovation. Our long-term goal is to democratize AI technology, making it accessible 
+                    to businesses of all sizes while ensuring ethical implementation and sustainable impact. We strive to be the leading catalyst in the 
+                    global AI transformation, helping organizations not just adopt technology, but truly thrive in the digital age.
+                  </p>
+                </div>
               </motion.div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
@@ -191,39 +202,34 @@ const GetStarted = () => {
                           </CardDescription>
                         </CardHeader>
                       </Card>
+
+                      {/* Show benefits directly underneath when selected */}
+                      {selectedIndustry === industry.id && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          transition={{ duration: 0.3 }}
+                          className="mt-4"
+                        >
+                          <Card className="bg-slate-800/70 border-yellow-500/50">
+                            <CardContent className="p-4">
+                              <h4 className="text-yellow-400 font-semibold mb-3 text-sm">Key Benefits:</h4>
+                              <div className="space-y-2">
+                                {industry.benefits.map((benefit, idx) => (
+                                  <div key={idx} className="flex items-start gap-2">
+                                    <Zap className="w-3 h-3 text-yellow-400 mt-1 flex-shrink-0" />
+                                    <span className="text-gray-300 text-xs">{benefit}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </CardContent>
+                          </Card>
+                        </motion.div>
+                      )}
                     </motion.div>
                   );
                 })}
               </div>
-
-              {selectedIndustry && selectedIndustryData && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="mb-8 sm:mb-12"
-                >
-                  <Card className="bg-slate-800/70 border-yellow-500/30">
-                    <CardHeader className="p-4 sm:p-6">
-                      <CardTitle className="text-xl sm:text-2xl text-white flex items-center gap-3">
-                        <selectedIndustryData.icon className="w-6 sm:w-8 h-6 sm:h-8 text-yellow-400" />
-                        AI Solutions for {selectedIndustryData.name}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="p-4 sm:p-6 pt-0">
-                      <h3 className="text-base sm:text-lg font-semibold text-yellow-400 mb-3 sm:mb-4">Key Benefits:</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-                        {selectedIndustryData.benefits.map((benefit, index) => (
-                          <div key={index} className="flex items-start gap-2 sm:gap-3">
-                            <Zap className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-300 text-sm sm:text-base">{benefit}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              )}
 
               <motion.div 
                 className="text-center"
@@ -236,6 +242,11 @@ const GetStarted = () => {
                   <Link to="/pricing" className="w-full sm:w-auto">
                     <Button size="lg" className="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-semibold text-sm sm:text-base px-6 sm:px-8">
                       View Plans & Pricing
+                    </Button>
+                  </Link>
+                  <Link to="/consultation" className="w-full sm:w-auto">
+                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-yellow-500 text-yellow-500 hover:bg-yellow-500/10 text-sm sm:text-base px-6 sm:px-8">
+                      Book Consultation
                     </Button>
                   </Link>
                   <Link to="/contact-form" className="w-full sm:w-auto">
