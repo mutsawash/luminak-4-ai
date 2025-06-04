@@ -53,13 +53,6 @@ const Hero = ({ className = '' }: HeroProps) => {
 
       {/* Enhanced background overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/60 z-0"></div>
-      
-      {/* Animated particles overlay */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-blue-400 rounded-full animate-pulse delay-1000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse delay-2000"></div>
-      </div>
 
       <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
