@@ -15,8 +15,7 @@ import {
   BarChart3, 
   Headphones,
   MapPin,
-  Clock,
-  DollarSign
+  Clock
 } from 'lucide-react';
 
 const Careers = () => {
@@ -26,7 +25,6 @@ const Careers = () => {
       department: 'Strategy',
       type: 'Full-time',
       location: 'Harare, Zimbabwe',
-      salary: '$2,000 - $3,000/month',
       icon: Brain,
       description: 'Lead AI strategy development and guide clients through digital transformation journeys.',
       requirements: [
@@ -41,7 +39,6 @@ const Careers = () => {
       department: 'Finance',
       type: 'Full-time',
       location: 'Harare, Zimbabwe',
-      salary: '$1,200 - $1,800/month',
       icon: Calculator,
       description: 'Manage financial operations, reporting, and ensure compliance with local and international standards.',
       requirements: [
@@ -56,7 +53,6 @@ const Careers = () => {
       department: 'Engineering',
       type: 'Full-time',
       location: 'Remote/Harare',
-      salary: '$1,800 - $2,500/month',
       icon: Code,
       description: 'Develop and implement machine learning models and AI solutions for our clients.',
       requirements: [
@@ -71,7 +67,6 @@ const Careers = () => {
       department: 'Analytics',
       type: 'Full-time',
       location: 'Harare, Zimbabwe',
-      salary: '$1,500 - $2,200/month',
       icon: BarChart3,
       description: 'Transform complex data into actionable insights and create compelling visualizations.',
       requirements: [
@@ -86,7 +81,6 @@ const Careers = () => {
       department: 'Customer Success',
       type: 'Full-time',
       location: 'Harare, Zimbabwe',
-      salary: '$1,000 - $1,600/month',
       icon: Headphones,
       description: 'Ensure client satisfaction and drive adoption of our AI solutions.',
       requirements: [
@@ -101,7 +95,6 @@ const Careers = () => {
       department: 'Sales',
       type: 'Full-time',
       location: 'Harare, Zimbabwe',
-      salary: '$800 - $1,400/month + Commission',
       icon: Users,
       description: 'Identify new business opportunities and build relationships with potential clients.',
       requirements: [
@@ -219,15 +212,9 @@ const Careers = () => {
                         </CardHeader>
                         <CardContent>
                           <div className="space-y-4">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                              <div className="flex items-center gap-2">
-                                <MapPin className="w-4 h-4 text-gray-400" />
-                                <span className="text-gray-300">{position.location}</span>
-                              </div>
-                              <div className="flex items-center gap-2">
-                                <DollarSign className="w-4 h-4 text-gray-400" />
-                                <span className="text-gray-300">{position.salary}</span>
-                              </div>
+                            <div className="flex items-center gap-2 text-sm">
+                              <MapPin className="w-4 h-4 text-gray-400" />
+                              <span className="text-gray-300">{position.location}</span>
                             </div>
                             
                             <div>
