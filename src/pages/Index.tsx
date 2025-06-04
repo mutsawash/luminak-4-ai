@@ -9,7 +9,6 @@ import About from '@/components/sections/About';
 import CaseStudies from '@/components/sections/CaseStudies';
 import Blog from '@/components/sections/Blog';
 import Contact from '@/components/sections/Contact';
-import ParticleAnimation from '@/components/ui/ParticleAnimation';
 
 const Index = () => {
   useEffect(() => {
@@ -94,7 +93,6 @@ const Index = () => {
       
       <div className="flex flex-col min-h-screen bg-slate-900 overflow-hidden">
         <Header />
-        <ParticleAnimation />
         
         <main className="flex-grow relative z-10">
           <Hero />
